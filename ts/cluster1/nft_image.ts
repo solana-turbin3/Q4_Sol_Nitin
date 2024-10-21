@@ -19,10 +19,10 @@ umi.use(signerIdentity(signer));
         //2. Convert image to generic file.
         //3. Upload image
 
-        // const image = ???
-
-        // const [myUri] = ??? 
-        // console.log("Your image URI: ", myUri);
+        const image = await readFile("/home/nverma_36/turbine_q4/solana-starter/assets/jeffrug.png")
+        const genericFile = createGenericFile(image, "Chill Jeff", {contentType: "image/png"});
+        const [myUri] = await umi.uploader.upload([genericFile]);
+        console.log("Your image URI: ", myUri.replace("arweave.net","devnet.irys.xyz")); // https://devnet.irys.xyz/HvJo4fx1B2ZapWdeqP3pU53uu6yvGXQAJad1UF9tw6Yf
     }
     catch(error) {
         console.log("Oops.. Something went wrong", error);
