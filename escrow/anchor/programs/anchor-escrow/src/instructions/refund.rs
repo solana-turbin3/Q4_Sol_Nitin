@@ -2,7 +2,7 @@ use anchor_lang::prelude::*;
 use anchor_spl::token_interface::{transfer_checked, close_account, Mint, TokenAccount, TokenInterface, TransferChecked, CloseAccount};
 
 
-use crate::state::{Escrow};
+use crate::state::Escrow;
 
 #[derive(Accounts)]
 pub struct Refund<'info> {
